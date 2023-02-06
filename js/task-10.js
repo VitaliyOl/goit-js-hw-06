@@ -23,12 +23,17 @@ function destroyBoxes() {
 }
 
 function createBoxes(amount) {
+  const element = document.createDocumentFragment("");
+
   for (let i = 0; i < amount; i++) {
     let box = document.createElement("div");
     box.style.width = 30 + 10 * i + "px";
     box.style.height = 30 + 10 * i + "px";
     box.style.backgroundColor = getRandomHexColor();
 
-    refs.boxes.append(box);
+    element.append(box);
   }
+
+  refs.boxes.append(element);
+
 }
